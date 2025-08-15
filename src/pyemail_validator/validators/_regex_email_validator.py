@@ -3,7 +3,7 @@ from pyemail_validator.abstractions import BaseValidator
 from ._regex_validator import RegexValidator
 
 
-class RegexEmailValidator(BaseValidator):
+class RegexEmailValidator[T](BaseValidator[T]):
     """Regex base email validator."""
 
     def __init__(
@@ -13,7 +13,7 @@ class RegexEmailValidator(BaseValidator):
         """Common attributes initialization."""
         self.pattern = pattern
 
-    def validate(self, email: str) -> bool:
+    def validate(self, data: T) -> bool:
         """Validate email by using regex."""
-        regex_validator = RegexValidator(self.pattern)
-        return regex_validator.validate(email)
+        regex_validator = RegexValidator[T](self.pattern)
+        return regex_validator.validate(data)

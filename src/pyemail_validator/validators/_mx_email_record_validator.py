@@ -3,7 +3,7 @@ import dns.resolver  # type: ignore
 from pyemail_validator.abstractions import BaseValidator
 
 
-class MXEmailRecordValidator(BaseValidator):
+class MXEmailRecordValidator[T](BaseValidator[T]):
     """Validate email mx records"""
 
     def __init__(
@@ -23,13 +23,15 @@ class MXEmailRecordValidator(BaseValidator):
         except dns.resolver.NXDOMAIN:  # type: ignore
             return False
 
-    def validate(self, email: str) -> bool:
+    def validate(self, data: T) -> bool:
         """Validate email mx records."""
-        domain = email.split("@")[-1]
-        if self.allowed_domains:
-            if domain in self.allowed_domains:
-                return self._has_mx_record(domain)
+        if isinstance(data, str):
+            domain = data.split("@")[-1]
+            if self.allowed_domains:
+                if domain in self.allowed_domains:
+                    return self._has_mx_record(domain)
+                else:
+                    return False
             else:
-                return False
-        else:
-            return self._has_mx_record(domain)
+                return self._has_mx_record(domain)
+        return False

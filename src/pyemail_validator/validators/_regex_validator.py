@@ -3,7 +3,7 @@ from re import match
 from pyemail_validator.abstractions import BaseValidator
 
 
-class RegexValidator(BaseValidator):
+class RegexValidator[T](BaseValidator[T]):
     """Regex base email validator."""
 
     def __init__(
@@ -13,6 +13,8 @@ class RegexValidator(BaseValidator):
         """Common attributes initialization."""
         self.pattern = pattern
 
-    def validate(self, email: str) -> bool:
+    def validate(self, data: T) -> bool:
         """Validate data by using regex."""
-        return match(self.pattern, email) is not None
+        if isinstance(data, str):
+            return match(self.pattern, data) is not None
+        return False
