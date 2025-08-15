@@ -3,7 +3,7 @@
 # ==========================
 
 [project]
-name = "pyemail-validator"
+name = "univalidator"
 version = "0.1.0"
 description = "A lightweight, type-safe email validator with support of multiple validator."
 license = { file = "LICENSE" }
@@ -27,14 +27,12 @@ classifiers = [
     "Topic :: Software Development :: Testing",
 ]
 requires-python = ">=3.13"
-dependencies = [
-    "dnspython>=2.7.0",
-]
+dependencies = ["dnspython>=2.7.0"]
 
 # CLI scripts entry point configuration
 # -------------------------------------
 [project.scripts]
-pyemail-validator = "pyemail_validator:entry_point"
+univalidator = "univalidator:entry_point"
 
 # ==========================
 # Build system configuration
@@ -47,10 +45,7 @@ build-backend = "hatchling.build"
 # Dependency groups
 # =================
 [dependency-groups]
-dev = [
-    "pyemail-validator",
-    "pytest>=8.4.1",
-]
+dev = ["univalidator", "pytest>=8.4.1"]
 
 # =====================
 # Optional dependencies
@@ -62,21 +57,21 @@ dev = ["pytest", "mypy", "ruff"]
 # UV tool sources
 # ===============
 [tool.uv.sources]
-pyemail-validator = { workspace = true }
+univalidator = { workspace = true }
 
 # ============
 # Package data
 # ============
 [tool.setuptools.package-data]
-"pyemail_validator" = ["py.typed"]
+"univalidator" = ["py.typed"]
 
 # ============
 # Project URLs
 # ============
 [project.urls]
-Homepage = "https://github.com/shaileshpandit141/pyemail-validator"
-Repository = "https://github.com/shaileshpandit141/pyemail-validator"
-Issues = "https://github.com/shaileshpandit141/pyemail-validator/issues"
+Homepage = "https://github.com/shaileshpandit141/univalidator"
+Repository = "https://github.com/shaileshpandit141/univalidator"
+Issues = "https://github.com/shaileshpandit141/univalidator/issues"
 
 # ===================
 # Tool Configurations

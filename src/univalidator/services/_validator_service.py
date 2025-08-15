@@ -1,4 +1,4 @@
-from pyemail_validator.abstractions import BaseValidator
+from univalidator.abstractions import BaseValidator
 
 
 class ValidatorService[T]:

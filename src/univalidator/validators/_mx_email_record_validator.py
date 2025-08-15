@@ -1,6 +1,6 @@
 import dns.resolver  # type: ignore
 
-from pyemail_validator.abstractions import BaseValidator
+from univalidator.abstractions import BaseValidator
 
 
 class MXEmailRecordValidator[T](BaseValidator[T]):

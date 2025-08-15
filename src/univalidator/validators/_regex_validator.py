@@ -1,6 +1,6 @@
 from re import match
 
-from pyemail_validator.abstractions import BaseValidator
+from univalidator.abstractions import BaseValidator
 
 
 class RegexValidator[T](BaseValidator[T]):

@@ -1,4 +1,4 @@
-from pyemail_validator.abstractions import BaseValidator
+from univalidator.abstractions import BaseValidator
 
 from ._regex_validator import RegexValidator
 

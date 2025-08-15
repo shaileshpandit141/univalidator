@@ -92,7 +92,7 @@ wheels = [
 ]
 
 [[package]]
-name = "pyemail-validator"
+name = "univalidator"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
@@ -108,7 +108,7 @@ dev = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "pyemail-validator" },
+    { name = "univalidator" },
     { name = "pytest" },
 ]
 
@@ -123,7 +123,7 @@ provides-extras = ["dev"]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "pyemail-validator", editable = "." },
+    { name = "univalidator", editable = "." },
     { name = "pytest", specifier = ">=8.4.1" },
 ]
 
