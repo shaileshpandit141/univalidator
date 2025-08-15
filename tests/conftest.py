@@ -1,6 +1,10 @@
 from pytest import fixture
 
-from univalidator.validators import RegexEmailValidator, RegexValidator
+from univalidator.validators import (
+    MXEmailRecordValidator,
+    RegexEmailValidator,
+    RegexValidator,
+)
 
 
 @fixture
@@ -15,3 +19,21 @@ def username() -> RegexValidator[str]:
 def email() -> RegexEmailValidator[str]:
     """Create regex email validator instance and return it."""
     return RegexEmailValidator[str]()
+
+
+@fixture
+def mxemail() -> MXEmailRecordValidator[str]:
+    """Create mx email record validator instance and return it."""
+    return MXEmailRecordValidator[str]()
+
+
+@fixture
+def mxemail_with_allowed_domains() -> MXEmailRecordValidator[str]:
+    """Create mx email record validator instance and return it."""
+    return MXEmailRecordValidator[str](
+        [
+            "gmail.com",
+            "outlook.com",
+            "dock.com",
+        ]
+    )
