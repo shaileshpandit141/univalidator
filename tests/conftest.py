@@ -30,10 +30,4 @@ def mxemail() -> MXEmailRecordValidator[str]:
 @fixture
 def mxemail_with_allowed_domains() -> MXEmailRecordValidator[str]:
     """Create mx email record validator instance and return it."""
-    return MXEmailRecordValidator[str](
-        [
-            "gmail.com",
-            "outlook.com",
-            "dock.com",
-        ]
-    )
+    return MXEmailRecordValidator[str](["gmail.com"])
