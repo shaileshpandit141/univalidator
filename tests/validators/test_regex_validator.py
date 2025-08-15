@@ -1,7 +1,7 @@
 from univalidator.validators import RegexValidator
 
 
-def test_regex_validator_instance(
+def test_regex_validator_isinstance(
     regex_validator: RegexValidator[str],
 ) -> None:
     """Check regex validator instance create or not."""
