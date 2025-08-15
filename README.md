@@ -2,7 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/univalidator.svg)](https://pypi.org/project/univalidator/)
 [![Python versions](https://img.shields.io/pypi/pyversions/univalidator.svg)](https://pypi.org/project/univalidator/)
-[![License](https://img.shields.io/pypi/l/univalidator.svg)](https://github.com/yourusername/univalidator/blob/main/LICENSE)
+[![License](https://img.shields.io/pypi/l/univalidator.svg)](https://github.com/shaileshpandit141/univalidator/blob/main/LICENSE)
 
 A **flexible, extensible, and type-safe** Python validation framework designed to validate data with ease.  
 Currently supports **email validation** (via regex and MX records) and **composite validators** for running multiple checks.
