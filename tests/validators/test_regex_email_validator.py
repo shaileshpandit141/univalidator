@@ -10,7 +10,7 @@ def test_regex_email_validator_isinstance(
     assert isinstance(email, RegexEmailValidator)
 
 
-test_data: list[tuple[str, bool]] = [
+valid_test_data: list[tuple[str, bool]] = [
     ("user@example.com", True),
     ("user.name@example.co", True),
     ("user-name@sub.domain.net", True),
@@ -19,7 +19,7 @@ test_data: list[tuple[str, bool]] = [
 ]
 
 
-@mark.parametrize("valid_email, expected", test_data)
+@mark.parametrize("valid_email, expected", valid_test_data)
 def test_valid_email_address(
     email: RegexEmailValidator[str],
     valid_email: str,
