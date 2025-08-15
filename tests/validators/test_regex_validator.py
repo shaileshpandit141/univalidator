@@ -29,7 +29,7 @@ test_data: list[tuple[str, bool]] = [
 
 
 @mark.parametrize("value, expected", test_data)
-def test_valid_username(
+def test_username(
     username: RegexValidator[str],
     value: str,
     expected: bool,

@@ -24,7 +24,7 @@ test_data: list[tuple[str, bool]] = [
 
 
 @mark.parametrize("value, expected", test_data)
-def test_valid_email_address(
+def test_composite_email_address(
     composite_email: CompositeValidator[str],
     value: str,
     expected: bool,

@@ -26,7 +26,7 @@ test_data: list[tuple[str, bool]] = [
 
 
 @mark.parametrize("value, expected", test_data)
-def test_valid_email_address(
+def test_email_address(
     email: RegexEmailValidator[str],
     value: str,
     expected: bool,

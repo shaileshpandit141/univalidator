@@ -26,7 +26,7 @@ test_data: list[tuple[str, bool]] = [
 
 
 @mark.parametrize("value, expected", test_data)
-def test_valid_mxemail_record(
+def test_mxemail_record(
     mxemail: MXEmailRecordValidator[str],
     value: str,
     expected: bool,
@@ -46,7 +46,7 @@ test_data_allowed_domains: list[tuple[str, bool]] = [
 
 
 @mark.parametrize("value, expected", test_data_allowed_domains)
-def test_valid_mxemail_record_with_allowed_domains(
+def test_mxemail_record_with_allowed_domains(
     mxemail_with_allowed_domains: MXEmailRecordValidator[str],
     value: str,
     expected: bool,
