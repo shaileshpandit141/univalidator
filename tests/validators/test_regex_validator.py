@@ -10,7 +10,7 @@ def test_regex_validator_isinstance(
     assert isinstance(username, RegexValidator)
 
 
-valid_test_data: list[tuple[str, bool]] = [
+test_data: list[tuple[str, bool]] = [
     ("Alice123", True),
     ("john_doe", True),
     ("Z9.test", True),
@@ -18,35 +18,21 @@ valid_test_data: list[tuple[str, bool]] = [
     ("a.b", True),
     ("Chris.underscore", True),
     ("s2.", True),
+    ("1stPlace", False),
+    ("_hidden", False),
+    ("Al", False),
+    ("Bob@home", False),
+    ("toolooooooooooooooooong", False),
+    ("24563", False),
+    ("Space Man", False),
 ]
 
 
-@mark.parametrize("valid_username, expected", valid_test_data)
+@mark.parametrize("value, expected", test_data)
 def test_valid_username(
     username: RegexValidator[str],
-    valid_username: str,
+    value: str,
     expected: bool,
 ) -> None:
     """Test valid username"""
-    assert username.validate(valid_username) == expected
-
-
-invalid_test_data: list[tuple[str, bool]] = [
-    ("1stPlace", True),
-    ("_hidden", True),
-    ("Al", True),
-    ("Bob@home", True),
-    ("toolooooooooooooooooong", True),
-    ("24563", True),
-    ("Space Man", True),
-]
-
-
-@mark.parametrize("invalid_username, expected", valid_test_data)
-def test_invalid_username(
-    username: RegexValidator[str],
-    invalid_username: str,
-    expected: bool,
-) -> None:
-    """Test invalid username"""
-    assert username.validate(invalid_username) == expected
+    assert username.validate(value) == expected
