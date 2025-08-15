@@ -27,9 +27,7 @@ classifiers = [
     "Topic :: Software Development :: Testing",
 ]
 requires-python = ">=3.13"
-dependencies = [
-    "dnspython>=2.7.0",
-]
+dependencies = ["dnspython>=2.7.0"]
 
 # CLI scripts entry point configuration
 # -------------------------------------
