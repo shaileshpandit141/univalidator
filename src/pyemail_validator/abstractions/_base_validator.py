@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class BaseEmailValidator(ABC):
+class BaseValidator(ABC):
     """Absctract class for email validator."""
 
     @abstractmethod

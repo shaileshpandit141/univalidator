@@ -1,9 +1,9 @@
 from re import match
 
-from pyemail_validator.abstractions import BaseEmailValidator
+from pyemail_validator.abstractions import BaseValidator
 
 
-class RegexValidator(BaseEmailValidator):
+class RegexValidator(BaseValidator):
     """Regex base email validator."""
 
     def __init__(

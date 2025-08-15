@@ -1,3 +1,3 @@
-from ._base_email_validator import BaseEmailValidator
+from ._base_validator import BaseValidator
 
-__all__ = ["BaseEmailValidator"]
+__all__ = ["BaseValidator"]
