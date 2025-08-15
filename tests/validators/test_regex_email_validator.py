@@ -27,3 +27,23 @@ def test_valid_email_address(
 ) -> None:
     """Test valid email address."""
     assert email.validate(valid_email) == expected
+
+
+invalid_test_data: list[tuple[str, bool]] = [
+    ("user@", False),
+    ("@domain.com", False),
+    ("user@domain", False),
+    ("user@domain.", False),
+    ("user@@example.com", False),
+    ("uuser name@example.com", False),
+]
+
+
+@mark.parametrize("invalid_email, expected", invalid_test_data)
+def test_invalid_email_address(
+    email: RegexEmailValidator[str],
+    invalid_email: str,
+    expected: bool,
+) -> None:
+    """Test valid email address."""
+    assert email.validate(invalid_email) == expected
