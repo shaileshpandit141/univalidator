@@ -1,3 +1,3 @@
-from ._validator_service import ValidatorService
+from ._composite_validator import CompositeValidator
 
-__all__ = ["ValidatorService"]
+__all__ = ["CompositeValidator"]

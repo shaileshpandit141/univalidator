@@ -1,7 +1,7 @@
 from univalidator.abstractions import BaseValidator
 
 
-class ValidatorService[T]:
+class CompositeValidator[T]:
     """Runs multiple validators on given data."""
 
     def __init__(self, validators: list[BaseValidator[T]]) -> None:
