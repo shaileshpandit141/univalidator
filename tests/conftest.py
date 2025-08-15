@@ -1,5 +1,6 @@
 from pytest import fixture
 
+from univalidator.composites import CompositeValidator
 from univalidator.validators import (
     MXEmailRecordValidator,
     RegexEmailValidator,
@@ -31,3 +32,11 @@ def mxemail() -> MXEmailRecordValidator[str]:
 def mxemail_with_allowed_domains() -> MXEmailRecordValidator[str]:
     """Create mx email record validator instance and return it."""
     return MXEmailRecordValidator[str](["gmail.com"])
+
+
+@fixture
+def composite_email() -> CompositeValidator[str]:
+    "Run multiple validators."
+    return CompositeValidator[str](
+        [RegexEmailValidator[str](), MXEmailRecordValidator[str]()]
+    )
