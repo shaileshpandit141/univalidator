@@ -45,7 +45,10 @@ build-backend = "hatchling.build"
 # Dependency groups
 # =================
 [dependency-groups]
-dev = ["pyemail-validator"]
+dev = [
+    "pyemail-validator",
+    "pytest>=8.4.1",
+]
 
 # =====================
 # Optional dependencies
