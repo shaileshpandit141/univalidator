@@ -8,11 +8,11 @@ class RegexValidator(BaseValidator):
 
     def __init__(
         self,
-        pattern: str = r"^[\w\.-]+@[\w\.-]+\.\w+$",
+        pattern: str,
     ) -> None:
         """Common attributes initialization."""
         self.pattern = pattern
 
     def validate(self, email: str) -> bool:
-        """Validate email by using regex."""
+        """Validate data by using regex."""
         return match(self.pattern, email) is not None
