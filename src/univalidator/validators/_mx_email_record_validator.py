@@ -20,13 +20,16 @@ class MXEmailRecordValidator[T: str](BaseValidator[T]):
         "Check email has mx record or not."
         try:
             records = dns.resolver.resolve(domain, "MX")  # type: ignore
-            return len(records) > 0  # type: ignore
-        except dns.resolver.NoAnswer:  # type: ignore
+            return len(records) > 0
+        except dns.resolver.NoAnswer:
             self.error = f"No MX records found for domain '{domain}'."
-            return False
-        except dns.resolver.NXDOMAIN:  # type: ignore
-            self.error = self.error_message or f"Domain '{domain}' does not exist."
-            return False
+        except dns.resolver.NXDOMAIN:
+            self.error = f"Domain '{domain}' does not exist."
+        except dns.resolver.Timeout:
+            self.error = f"DNS lookup for '{domain}' timed out."
+        except dns.resolver.NoNameservers:
+            self.error = f"No nameservers available for '{domain}'."
+        return False
 
     def validate(self, value: T) -> bool:
         """Validate email mx records."""
