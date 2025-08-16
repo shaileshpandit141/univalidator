@@ -31,12 +31,17 @@ def mxemail() -> MXEmailRecordValidator[str]:
 @fixture
 def mxemail_with_allowed_domains() -> MXEmailRecordValidator[str]:
     """Create mx email record validator instance and return it."""
-    return MXEmailRecordValidator[str](["gmail.com"])
+    return MXEmailRecordValidator[str](
+        allowed_domains=["gmail.com"],
+    )
 
 
 @fixture
 def composite_email() -> CompositeValidator[str]:
     "Run multiple validators."
     return CompositeValidator[str](
-        [RegexEmailValidator[str](), MXEmailRecordValidator[str]()]
+        validators=[
+            RegexEmailValidator[str](),
+            MXEmailRecordValidator[str](),
+        ]
     )
