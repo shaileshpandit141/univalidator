@@ -4,7 +4,7 @@
 
 [project]
 name = "univalidator"
-version = "0.2.0"
+version = "0.2.1"
 description = "A lightweight, type-safe email validator with support of multiple validator."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
