@@ -1,20 +1,14 @@
 from re import Match, match
 
-from univalidator.abstractions import BaseValidator
+from univalidator.interfaces import Validator
 
 
-class RegexValidator[T: str](BaseValidator[T]):
+class RegexValidator[T: str](Validator[T]):
     """Regex base email validator."""
 
-    def __init__(
-        self,
-        *,
-        error_message: str | None = None,
-        pattern: str,
-    ) -> None:
-        """Initialize a regex validator."""
+    def __init__(self, pattern: str) -> None:
+        """Initialize a regex pattern."""
         self.pattern = pattern
-        super().__init__(error_message=error_message)
 
     def validate(self, value: T) -> bool:
         """Validate data by using regex."""
@@ -22,5 +16,4 @@ class RegexValidator[T: str](BaseValidator[T]):
         if matched is not None:
             return True
 
-        self.error = self.error_message or "Value does not match the required format."
         return False
