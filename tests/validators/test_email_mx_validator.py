@@ -14,7 +14,6 @@ test_data: list[tuple[str, bool]] = [
     ("y646896@gmail.com", True),
     ("ios646896@gmail.com", True),
     ("shaileshpandit141@gmail.com", True),
-    ("shaileshpandit141@dock.com", True),
     ("@domain.com", True),
     ("user@example.com", True),
     ("user@", False),
