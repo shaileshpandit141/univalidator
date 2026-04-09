@@ -62,14 +62,14 @@ validator.validate("user@example.com")  # True
 validator.validate("invalid-email")     # False
 ```
 
-### **4️ MXEmailRecordValidator[T]**
+### **4️ EmailMxValidator[T]**
 
 Checks if an email’s domain has MX DNS records.
 
 ```python
-from univalidator.validators import MXEmailRecordValidator
+from univalidator.validators import EmailMxValidator
 
-validator = MXEmailRecordValidator[str]()
+validator = EmailMxValidator[str]()
 validator.validate("user@gmail.com")  # True
 validator.validate("user@no-such-domain.com")  # False
 ```
@@ -77,7 +77,7 @@ validator.validate("user@no-such-domain.com")  # False
 Restrict to specific domains:
 
 ```python
-validator = MXEmailRecordValidator[str](allowed_domains=["example.com", "gmail.com"])
+validator = EmailMxValidator[str](allowed_domains=["example.com", "gmail.com"])
 ```
 
 ### **5️ CompositeValidator[T]**
@@ -87,11 +87,11 @@ All validators must pass for the data to be valid.
 
 ```python
 from univalidator.composites import CompositeValidator
-from univalidator.validators import RegexEmailValidator, MXEmailRecordValidator
+from univalidator.validators import RegexEmailValidator, EmailMxValidator
 
 validator = CompositeValidator[str]([
     RegexEmailValidator(),
-    MXEmailRecordValidator()
+    EmailMxValidator()
 ])
 
 validator.validate("user@gmail.com")  # True
