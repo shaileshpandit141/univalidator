@@ -4,8 +4,8 @@ from univalidator.interfaces import Validator
 class CompositeValidator[T]:
     """Runs multiple validators on given data."""
 
-    def __init__(self) -> None:
-        self.validators: list[Validator[T]]
+    def __init__(self, validators: list[Validator[T]]) -> None:
+        self.validators = validators
 
     def add_validator(self, validator: Validator[T]) -> None:
         """Add a new validator."""
