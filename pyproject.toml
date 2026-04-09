@@ -4,12 +4,12 @@
 
 [project]
 name = "univalidator"
-version = "0.2.1"
+version = "2.0.0"
 description = "A lightweight, type-safe email validator with support of multiple validator."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
 authors = [
-    { name = "shaileshpandit141", email = "shaileshpandit141@gmail.com" },
+    { name = "Shailesh Pandit", email = "shaileshpandit141@gmail.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
