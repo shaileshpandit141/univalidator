@@ -21,7 +21,7 @@ test_data: list[tuple[str, bool]] = [
     ("user@domain", False),
     ("user@domain.", False),
     ("user@@example.com", False),
-    ("uuser name@example.com", False),
+    ("user name@example.com", False),
 ]
 
 
