@@ -104,6 +104,28 @@ uv add pytest
 uv run pytest tests
 ```
 
+## How to write a custom validator?
+
+```python
+from univalidator.interfaces import Validator
+
+class AgeValidator(Validator):
+    """Validator for validating age values."""
+
+    def validate(self, value) -> bool:
+        if not isinstance(value, int):
+            return False
+
+        if value < 0 or value > 120:
+            return False
+
+        return True
+
+```
+
+**Note:**
+No need to inherit Validator interface, you can implement the validate method directly in your class.
+
 ## 🌟 Example: Full Email Validation
 
 ```python
